@@ -29,8 +29,6 @@ function App() {
     setTodos(newTodos);
   };
 
-
-  
   return (
     <>
       <div className="container-sm text-center  w-50 mt-5 p-5 border">
@@ -48,16 +46,17 @@ function App() {
           <button onClick={AddTask} type="button" className="btn btn-primary">
             Add
           </button>
-          
         </div>
         {error && <p className="danger">{error}</p>}
         <ul className="list-group p-3">
           {todos.map((todo, index) => (
-            <li key={index} className="d-flex justify-content-between  p-3"><p>
-             {todo}{" "}
-            </p>
-              
-              <button type="button" onClick={(index)=>{DeleteTask(index)}} className="btn btn-danger">
+            <li key={index} className="d-flex justify-content-between  p-3">
+              <p>{todo} </p>
+              <button
+                type="button"
+                onClick={(index) => {DeleteTask(index);}}
+                className="btn btn-danger"
+              >
                 delete
               </button>
             </li>
